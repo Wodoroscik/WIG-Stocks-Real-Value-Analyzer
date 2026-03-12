@@ -12,7 +12,7 @@ A Python data pipeline designed to analyze Polish stock market (WIG) assets by s
 * **Time Series Alignment:** Uses Pandas outer joins and `ffill()` (forward-fill) to elegantly handle market desynchronization (e.g., matching weekend gold prices with Friday stock closes).
 * **Data Export:** Automatically dumps cleaned historical datasets into structured `.json` files for further downstream processing.
 
-<img width="1536" height="941" alt="image" src="https://github.com/user-attachments/assets/364823fb-b7e4-44bc-af47-3fae6300c340" />
+<img width="1686" height="1021" alt="image" src="https://github.com/user-attachments/assets/72f4337b-0d9d-462e-a377-0f482176d01a" />
 
 ## How to run
 1. Clone the repo and install dependencies:
