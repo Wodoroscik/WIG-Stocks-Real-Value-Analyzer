@@ -1,16 +1,18 @@
 # WIG-Stocks-Real-Value-Analyzer
-A Python data pipeline designed to analyze Polish stock market (WIG) assets by stripping away local currency inflation. It fetches historical stock data and recalculates asset values against hard currencies (USD) and commodities (Gold). 
+
+## Overview
+A Python script for analyzing Polish stock market (WIG) assets by recalculating their historical values against hard currencies (USD) and commodities (Gold). It fetches local stock data and applies conversion rates to account for local currency fluctuations.
 
 ## Tech Stack
-* **Python 3**
-* **Pandas** (Data manipulation, merging, forward-filling time series data)
-* **APIs:** Yahoo Finance (`yfinance`), NBP API (National Bank of Poland)
-* **Matplotlib** (Data visualization)
+* **Language:** Python 3
+* **Data Processing:** Pandas
+* **Integrations:** Yahoo Finance API (`yfinance`), NBP API (National Bank of Poland)
+* **Visualization:** Matplotlib
 
-## Engineering Highlights
-* **API Pagination Handling:** The National Bank of Poland API strictly limits historical queries to 365 days. The script implements an automated date-chunking loop to bypass this and fetch decades of data seamlessly.
-* **Time Series Alignment:** Uses Pandas outer joins and `ffill()` (forward-fill) to elegantly handle market desynchronization (e.g., matching weekend gold prices with Friday stock closes).
-* **Data Export:** Automatically dumps cleaned historicapip install -r requirements.txtl datasets into structured `.json` files for further downstream processing.
+## Technical Implementation
+* **API Pagination:** Implements an automated date-based loop to handle the strict 365-day per-request limit of the NBP API.
+* **Time Series Alignment:** Uses Pandas outer joins and forward-filling (`ffill()`) to handle missing weekend and holiday data points across different market calendars.
+* **Data Export:** Exports the merged and cleaned historical datasets into structured `.json` files.
 
 <img width="1686" height="1021" alt="image" src="https://github.com/user-attachments/assets/72f4337b-0d9d-462e-a377-0f482176d01a" />
 
